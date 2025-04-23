@@ -1,9 +1,19 @@
-// Optional: Click to copy email
-document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const email = link.href.replace('mailto:', '');
-    navigator.clipboard.writeText(email);
-    alert("Email copied to clipboard: " + email);
+// Add simple animation to sections on scroll
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0)';
+    }
   });
+}, {
+  threshold: 0.15
+});
+
+sections.forEach(sec => {
+  sec.style.opacity = 0;
+  sec.style.transform = 'translateY(40px)';
+  observer.observe(sec);
 });
