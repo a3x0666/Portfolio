@@ -78,28 +78,20 @@ ul {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-.cert-item {
-  position: relative;
-  margin-bottom: 20px;
+
+/* 🌐 Certificate Link Styling */
+section ul li a {
+  color: #00d4ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
-.cert-image {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 10px;
-  z-index: 10;
+section ul li a:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
-.cert-image img {
-  max-width: 300px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  padding: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.cert-item:hover .cert-image {
-  display: block;
+section ul li a::after {
+  content: " 🔗";
 }
